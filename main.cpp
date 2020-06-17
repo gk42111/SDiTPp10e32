@@ -21,23 +21,28 @@ int main()
 		}
 		else liczbyParzyste.push(suma);
 	}
+
 	ofstream zapis("liczbyParzyste.txt");
 	ofstream zapis2("liczbyNieparzyste.txt");
 	zapis.close();
 	zapis2.close();
+	int iMC = liczbyParzyste.size();
+	int iMCJ = liczbyNieparzyste.size();
 
-	for (int i = 0; i < liczbyParzyste.size(); i++) {
+	for (int i = 0; i < iMC; i++) {
 		zapis.open("liczbyParzyste.txt", ios_base::app);
 		zapis << liczbyParzyste.front()<<" ";
 		zapis.close();
 		liczbyParzyste.pop();
 	}
-	for (int i = 0; i < liczbyNieparzyste.size(); i++) {
+	for (int i = 0; i < iMCJ; i++) {
 		zapis2.open("liczbyNieparzyste.txt", ios_base::app);
 		zapis2 << liczbyNieparzyste.front()<<" ";
 		zapis2.close();
 		liczbyNieparzyste.pop();
 	}
+	cout << liczbyNieparzyste.size() << endl;
+	cout << liczbyParzyste.size() << endl;
 
 	system("pause");
 	return 0;
